@@ -4,7 +4,7 @@ const Item = ({ text }) => {
     return <li>{text}</li>;
 }
 
-const List = React.memo(({ funcaoQualquer }) => {
+const List = ({ funcaoQualquer }) => {
     return (
         <>
             <ul>
@@ -12,20 +12,16 @@ const List = React.memo(({ funcaoQualquer }) => {
             </ul>
         </>
     );
-});
+};
 
 function App() {
 	const [message, setMessage] = useState('');
-
-	const funcaoQualquer = useCallback(() => {
-		alert('Teste');
-	}, []);
 
 	return (
 		<>
 			<input value={message} onChange={e => setMessage(e.target.value)} />
         	<button onClick={() => alert(message)}>Botão</button>
-			<List funcaoQualquer={funcaoQualquer} />
+			<List />
 		</>
 	);
 }
