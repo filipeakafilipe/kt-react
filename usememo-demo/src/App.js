@@ -21,9 +21,7 @@ export const UmComponente = () => {
         return Math.floor(Math.random() * 101);
     }
 
-    const umValorComplexo = useMemo(() => {
-        return funcaoComputacionalmentePesada();
-    }, [estadoParaAtualizarOComponenteEValorComplexo]);
+    const umValorComplexo = funcaoComputacionalmentePesada();
 
     return (
         <>
