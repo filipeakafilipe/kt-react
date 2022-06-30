@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const PostItem = React.memo(({id, title}) => {
+const PostItem = ({id, title}) => {
   return(
       <div key={id}>{title}</div>
   )
-});
+};
 
 export const  Posts = () => {
     const [postsList, setPostsList] = useState([]);
